@@ -18,7 +18,9 @@ document.body.appendChild(ARButton.createButton(renderer));
 // Load the 3D model
 const loader = new GLTFLoader();
 loader.load("Assets/Models/panel500.glb", (gltf) => {
-  scene.add(gltf.scene);
+    let model = gltf.scene;
+    model.scale.set(0.2, 0.2, 0.2); // Scale down to 50% of original size
+    scene.add(model);
 }, undefined, console.error);
 
 // Add lights
